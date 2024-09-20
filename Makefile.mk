@@ -3,6 +3,7 @@
 APP_NAME = app.lecture_1:app
 HOST = localhost
 PORT = 8000
+all: install run wait-for-server tests
 
 install:
 	@echo "Installing requirements..."
@@ -21,4 +22,4 @@ wait-for-server:
 	@echo "Waiting for the server to start..."
 	@until curl -s "http://$(HOST):$(PORT)" >/dev/null; do sleep 1; done
 
-all: install run wait-for-server tests
+
